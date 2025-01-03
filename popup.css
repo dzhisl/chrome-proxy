@@ -1,0 +1,138 @@
+/* Initial hidden state */
+
+/* General body styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8; /* Lighter background for better contrast */
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    width: 320px; /* Slightly wider for better layout */
+    height: auto; /* Allow height to adjust based on content */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Heading style */
+h2 {
+    color: #6a1b9a; /* Purple color */
+    text-align: center;
+    font-size: 22px; /* Increased font size for better visibility */
+    margin-bottom: 20px; /* More space below the heading */
+}
+
+/* Button styling */
+.button {
+    background-color: #6a1b9a; /* Purple */
+    color: white;
+    border: none;
+    padding: 10px 16px; /* Increased padding for a more substantial button */
+    font-size: 16px; /* Larger font size for readability */
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    transition: background-color 0.7s ease, transform 0.2s ease; /* Added transform transition */
+}
+
+.button:hover {
+    background-color: #4a148c; /* Darker purple on hover */
+    transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+
+/* Full-width button styling */
+.full-width-button {
+    width: 100%;
+}
+
+/* Button container styling */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Increased gap for better spacing between buttons */
+}
+
+/* Input field styling */
+input[type="text"], input[type="password"], textarea {
+    width: calc(100% - 20px); /* Adjusted width for centering with padding */
+    padding: 10px; /* More padding for comfort */
+    margin: 5px auto; /* Centering with auto margins */
+    border: 1px solid #ccc; /* Softer border color */
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center; /* Center text inside input fields */
+}
+
+/* Dropdown section hidden initially */
+.hidden-section {
+    display: none;
+}
+
+/* Label styling */
+label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Textarea styling */
+textarea {
+    font-family: Arial, sans-serif;
+    padding: 10px; /* More padding for comfort */
+    border: 1px solid #ccc; /* Softer border color */
+    border-radius: 5px;
+    resize: vertical;
+}
+
+/* Focus styling */
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+    outline: none;
+    border-color: #6a1b9a; /* Highlighted border on focus */
+}
+
+/* Show connection settings when the button is clicked */
+#showInputsButton.active + #connectionSettings,
+#showInputsButton.focus + #connectionSettings {
+    display: block; /* Ensure the dropdown shows correctly when focused or active */
+}/* Basic styles for the toast */
+/* Basic styles for the toast *//* Basic styles for the toast */
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px; /* Center the toast */
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: -60px; /* Start off-screen */
+    font-size: 17px; /* Initial font size */
+    opacity: 0; /* Start with opacity 0 */
+    transition: top 0.5s ease, opacity 0.5s ease; /* Smooth transition for top and opacity */
+    word-wrap: break-word; /* Break long words onto the next line */
+    white-space: normal; /* Allow text to wrap onto the next line */
+    max-width: 90%; /* Ensure it doesn't get too wide */
+}
+
+/* Show the toast when it's active */
+.toast.show {
+    visibility: visible;
+    opacity: 0.8;
+    top: 30px; /* Move toast to top position */
+}
+
+/* After the transition ends, visibility should be hidden */
+.toast.hide {
+    visibility: hidden;
+    opacity: 0;
+    top: -60px; /* Move the toast off-screen when hidden */
+}
+
+/* Animation for the toast */
+@keyframes slideIn {
+    0% { top: -60px; opacity: 0; }
+    100% { top: 30px; opacity: 1; }
+}

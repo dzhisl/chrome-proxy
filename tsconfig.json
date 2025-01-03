@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                  // JavaScript version to compile to
+    "module": "ESNext",               // Module format (Chrome extensions often use ES Modules)
+    "outDir": "./dist",               // Output directory for compiled files
+    "strict": true,                   // Enable all strict type-checking options
+    "sourceMap": true,                // Include source maps for debugging
+    "esModuleInterop": true,          // Compatibility for importing CommonJS modules
+    "moduleResolution": "node",       // Resolve modules like Node.js
+    "skipLibCheck": true,              // Skip checking types in .d.ts files
+    "allowJs": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

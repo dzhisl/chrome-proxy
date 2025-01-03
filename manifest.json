@@ -1,0 +1,27 @@
+﻿{
+  "name": "Pleho Proxy",
+  "version": "1.0.0",
+  "manifest_version": 3,
+"permissions": [
+    "proxy",
+    "tabs",
+    "alarms",
+    "storage",
+    "webRequest",
+    "webRequestAuthProvider",
+    "notifications",
+    "contextMenus"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "dist/background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+            "16": "images/vpn-logo.png",
+            "48": "images/vpn-logo.png",
+            "128": "images/vpn-logo.png"
+    }
+  }
+}
