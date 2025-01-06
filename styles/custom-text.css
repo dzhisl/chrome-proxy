@@ -1,0 +1,57 @@
+.glitch {
+  margin: 0 auto; /* Center horizontally */
+  position: relative;
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 3px;
+  z-index: 1;
+  width: max-content; /* Ensures the text width adjusts automatically */
+  line-height: 1; /* Prevent vertical spacing issues */
+}
+
+.glitch:before,
+.glitch:after {
+  display: block;
+  content: attr(data-text);
+  position: absolute;
+  top: 0; /* Align pseudo-elements with main text */
+  left: 0; /* Align to the left of the container */
+  width: 100%; /* Match the parent element's width */
+  text-align: center; /* Ensure proper centering */
+  opacity: 0.8;
+}
+
+.glitch:before {
+  animation: glitch-it 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  color: #00ffff;
+  z-index: -1;
+}
+
+.glitch:after {
+  animation: glitch-it 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+  color: #ff00ff;
+  z-index: -2;
+}
+
+@keyframes glitch-it {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}

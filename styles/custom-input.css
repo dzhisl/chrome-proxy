@@ -1,0 +1,32 @@
+.input {
+    max-width: 100%;
+    background-color: #1a1a1a;
+    border: none;
+    padding: 10px;
+    height: 20px;
+    border-radius: 10px;
+    outline: none;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 19px;
+    animation: rotateShadow 2s linear infinite;
+}
+
+.input:focus {
+    outline: none; /* Removes focus outline */
+}
+
+@keyframes rotateShadow {
+    0%, 100% {
+        box-shadow: -2px -2px 8px #aa00ff, 2px 2px 8px #3700ff;
+    }
+    25% {
+        box-shadow: -2px 2px 8px #aa00ff, 2px -2px 8px #3700ff;
+    }
+    50% {
+        box-shadow: 2px 2px 8px #aa00ff, -2px -2px 8px #3700ff;
+    }
+    75% {
+        box-shadow: 2px -2px 8px #aa00ff, -2px 2px 8px #3700ff;
+    }
+}

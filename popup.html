@@ -1,43 +1,50 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <!-- Link to Google Fonts for a more youthful font -->
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-      <link rel="stylesheet" type="text/css" href="popup.css">
-      <title>Connection Settings</title>
-   </head>
-   <body>
 
-      <h2>PLEHO PROXY</h2>
-      <div id="toast" class="toast">Settings Saved Successfully</div>
-      <!-- Button to show the input fields -->
-      <input type="button" id="showInputsButton" class="button" value="Configure Connection Settings"><br>
-      <!-- Dropdown section hidden initially -->
-      <div id="connectionSettings" class="hidden-section">
-         <label for="host">Host</label>
-         <input type="text" id="host"><br>
-         <label for="port">Port</label>
-         <input type="text" id="port"><br>
-         <label for="username">Username</label>
-         <input type="text" id="username"><br>
-         <label for="password">Password</label>
-         <input type="password" id="password"><br>
-         <div class="button-container">
-            <input type="button" id="set" class="button" value="Set">
-         </div>
-      </div>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Link to Google Fonts for a more youthful font -->
+   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@300;400;500&display=swap" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="styles/popup.css">
+   <link rel="stylesheet" type="text/css" href="styles/custom-text.css">
+   <link rel="stylesheet" type="text/css" href="styles/custom-btn.css">
+   <link rel="stylesheet" type="text/css" href="styles/custom-input.css">
+   <title>Connection Settings</title>
+</head>
+
+<body>
+   <img src="images/DZHISL-VPN.png" alt="VPN Icon" />
+   <div class="glitch" data-text="FIN VPN">FIN VPN</div>
+   <div id="toast" class="toast"></div>
+   <!-- <input type="button" id="showInputsButton" class="button" value="Configure Connection Settings"><br> -->
+   <div id="connectionSettings" class="hidden-section">
+      <label for="host">Host</label>
+      <input type="text" id="host"><br>
+      <label for="port">Port</label>
+      <input type="text" id="port"><br>
+      <label for="username">Username</label>
+      <input type="text" id="username"><br>
+      <label for="password">Password</label>
+      <input type="password" id="password"><br>
       <div class="button-container">
-         <input type="button" id="get" class="button" value="Get">
+         <input type="button" id="set" class="button" value="Set">
       </div>
-      <input type="button" id="default" class="button full-width-button" value="Reset VPN">
-      <input type="button" id="connect-promo" class="button full-width-button" value="Connect with Promo">
-      <label for="promo">Activation Code</label>
-      <input type="text" id="promo"><br>
-      <!-- At the end of your body tag -->
-      <script type="module" src="dist/popup/proxy-service.js"></script>
-      <script type="module" src="dist/popup/popup-ui.js"></script>
-      <script type="module" src="dist/popup/constants.js"></script>
-   </body>
+   </div>
+   <div class="button-container">
+      <input type="button" id="get" class="btn-donate" value="Get config">
+   </div>
+
+   <input type="button" id="default" class="btn-donate" value="Reset VPN">
+   <input type="button" id="connect-promo" class="btn-donate" value="Connect with Promo">
+
+   <input id="promo" class="input" name="text" type="text" placeholder="Activation Code">
+
+
+   <!-- At the end of your body tag -->
+   <script type="module" src="dist/popup/proxy-service.js"></script>
+   <script type="module" src="dist/popup/popup-ui.js"></script>
+   <script type="module" src="dist/popup/constants.js"></script>
+</body>
+
 </html>

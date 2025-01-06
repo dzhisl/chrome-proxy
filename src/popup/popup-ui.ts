@@ -11,21 +11,21 @@ function highlightButton(button: HTMLButtonElement, color: string = "green") {
   }, 500);
 }
 
-elements.dropDownButton.onclick = () => {
-  const connectionSettings = document.getElementById("connectionSettings");
-  if (connectionSettings) {
-    if (
-      connectionSettings.style.display === "none" ||
-      connectionSettings.style.display === ""
-    ) {
-      connectionSettings.style.display = "block";
-      elements.dropDownButton.value = "Hide Connection Settings";
-    } else {
-      connectionSettings.style.display = "none";
-      elements.dropDownButton.value = "Configure Connection Settings";
-    }
-  }
-};
+// elements.dropDownButton.onclick = () => {
+//   const connectionSettings = document.getElementById("connectionSettings");
+//   if (connectionSettings) {
+//     if (
+//       connectionSettings.style.display === "none" ||
+//       connectionSettings.style.display === ""
+//     ) {
+//       connectionSettings.style.display = "block";
+//       elements.dropDownButton.value = "Hide Connection Settings";
+//     } else {
+//       connectionSettings.style.display = "none";
+//       elements.dropDownButton.value = "Configure Connection Settings";
+//     }
+//   }
+// };
 
 elements.connectPromo.onclick = () => {
   const promoCode = elements.promo.value;

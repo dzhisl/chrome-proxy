@@ -24,7 +24,7 @@ function sleep(ms: number): Promise<void> {
 }
 
 // Function to set proxy configuration
-export async function setProxyConfig(host: string, port: number, username?: string, password?: string): Promise<void> {
+export function setProxyConfig(host: string, port: number, username?: string, password?: string): void {
   const config = {
     mode: "fixed_servers",
     rules: {
@@ -37,9 +37,9 @@ export async function setProxyConfig(host: string, port: number, username?: stri
 
   if (username && password) {
     sendCredentialsToBackground(username, password);
-    console.log("Sleeping before sending creds to background")
-    await sleep(500); // Add a 500ms delay
-    console.log("Sleep done")
+    // console.log("Sleeping before sending creds to background")
+    // await sleep(500); // Add a 500ms delay
+    // console.log("Sleep done")
   }
 
   chrome.proxy.settings.set({ value: config, scope: "regular" });
