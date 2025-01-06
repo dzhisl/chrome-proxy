@@ -14,4 +14,4 @@ export const elements = {
 
 };
 
-export const BASE_BACKEND_URL = "https://proxy-backend-omega.vercel.app"
+export const BASE_BACKEND_URL = "https://pleho.pro"

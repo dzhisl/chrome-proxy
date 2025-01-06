@@ -2,7 +2,7 @@ import { BASE_BACKEND_URL } from "./constants.js";
 
 // Function to send GET request to the server with the promo code
 export function getProxyByPromo(promoCode: string): Promise<void> {
-    const url = `${BASE_BACKEND_URL}/get-proxy?promo=${promoCode}`;
+    const url = `${BASE_BACKEND_URL}/proxy?promo=${promoCode}`;
   
     return fetch(url)
       .then(response => {

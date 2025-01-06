@@ -4,13 +4,8 @@
   "manifest_version": 3,
 "permissions": [
     "proxy",
-    "tabs",
-    "alarms",
-    "storage",
     "webRequest",
-    "webRequestAuthProvider",
-    "notifications",
-    "contextMenus"
+    "webRequestAuthProvider"
   ],
   "host_permissions": ["<all_urls>"],
   "background": {
