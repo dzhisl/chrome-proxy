@@ -62,19 +62,33 @@ export async function setProxyConfig(
       await sendCredentialsToBackground(username, password);
     }
 
-    chrome.proxy.settings.set({ value: config, scope: "regular" }, () => {
-      if (chrome.runtime.lastError) {
-        console.error("setProxyConfig: Failed to set proxy settings:", chrome.runtime.lastError.message);
-        throw new Error(chrome.runtime.lastError.message);
-      } else {
-        console.log("setProxyConfig: Proxy settings successfully applied in Chrome.");
-      }
-    });
+    // Function to set proxy settings
+    const setProxySettings = async (): Promise<void> => {
+      return new Promise<void>((resolve, reject) => {
+        chrome.proxy.settings.set({ value: config, scope: "regular" }, () => {
+          if (chrome.runtime.lastError) {
+            console.error("setProxyConfig: Failed to set proxy settings:", chrome.runtime.lastError.message);
+            reject(new Error(chrome.runtime.lastError.message));
+          } else {
+            console.log("setProxyConfig: Proxy settings successfully applied in Chrome.");
+            resolve();
+          }
+        });
+      });
+    };
+
+    // Apply proxy settings, wait, and reapply
+    await setProxySettings();
+    await sleep(1000);
+    await setProxySettings();
+
+    console.log("setProxyConfig: Re-applied proxy settings after waiting for 1 second.");
   } catch (error) {
     console.error("setProxyConfig: Error setting proxy configuration:", error);
     throw error;
   }
 }
+
 
 /**
  * Sends credentials to the background script for storage.
@@ -100,3 +114,5 @@ export function sendCredentialsToBackground(username: string, password: string):
     );
   });
 }
+
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
