@@ -1,6 +1,6 @@
 import { elements } from "./constants.js";
 
-export function showToast(message = 'Done!', color = 'green') {
+export async function showToast(message = 'Done!', color = 'green') {
   elements.toast.textContent = message;
   elements.toast.style.backgroundColor = color;
   // Show the toast
